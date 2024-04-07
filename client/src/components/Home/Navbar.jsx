@@ -1,13 +1,17 @@
 import { Box, Typography } from '@mui/material'
 import { navData } from '../constants/data.js'
 import React from 'react'
-import styled from '@emotion/styled'
+import { styled } from '@mui/material'
 
-const Component = styled(Box)`
-  display: flex;
-  margin: 55px 130px 0 130px;
-  justify-content: space-between;
-`
+const Component = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  margin: '55px 130px 0 130px',
+  justifyContent: 'space-between',
+  overflow: 'overlay',
+  [theme.breakpoints.down('lg')]: {
+    margin: 0
+  }
+}));
 const Container = styled(Box)`
   padding: 12px 8px;
   text-align: center;

@@ -1,23 +1,25 @@
-import { Grid } from "@mui/material";
+import { Grid, styled } from "@mui/material";
 import React from "react";
 import { imageURL } from "../constants/data";
-import styled from "@emotion/styled";
-import { useTheme } from "@mui/material";
+
 
 const Wrapper = styled(Grid)`
   margin-top: 10px;
   margin-top: 20px;
   justify-content: space-between;
 `;
+
+
+
 const Image = styled('img')(({ theme }) => ({ 
     display: 'flex',
     marginTop: 20,
     justifyContent: 'space-between',
     width: '100%',
-    // [theme.breakpoints.down('md')]: {
-    //     objectFit: 'cover',
-    //     height: 120
-    // }
+    [theme.breakpoints.down('md')]: {
+        objectFit: 'cover',
+        height: 120
+    }
 }));
 
 
