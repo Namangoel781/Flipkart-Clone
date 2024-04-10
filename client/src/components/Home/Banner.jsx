@@ -30,7 +30,7 @@ const responsive = {
 
 const Banner = () => {
   return (
-    <Carousel
+    <Carousel 
       responsive={responsive}
       swipeable={false}
       draggable={false}
@@ -43,7 +43,7 @@ const Banner = () => {
       containerClass="carousel-container"
     >
       {bannerData.map((data) => (
-        <Image src={data.url} alt="banner" />
+        <Image src={data.url} key={data.url} alt="banner" />
       ))}
     </Carousel>
   );

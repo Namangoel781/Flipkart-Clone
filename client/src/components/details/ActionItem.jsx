@@ -12,16 +12,21 @@ const LeftContainer = styled(Box)(({ theme }) => ({
 
 const Image = styled('img')({
     padding: '15px 20px',
-    border: '1px solid #f0f0f0',
-    width: '95%'
+    width: '90%'
 });
 
-const StyledButton = styled(Button)`
-    width: 46%;
-    border-radius: 2px;
-    height: 50px;
-    color: #FFF;
-`;
+const StyledButton = styled(Button)(({ theme}) => ({
+    width: '46%',
+    borderRadius: 2,
+    height: 50,
+    color: '#FFF',
+    [theme.breakpoints.down('lg')]: {
+        width: '46%'
+    },
+    [theme.breakpoints.down('sm')]: {
+        width: '48%'
+    }
+}))
 
 const ActionItem = ({ product }) => {
   return (
