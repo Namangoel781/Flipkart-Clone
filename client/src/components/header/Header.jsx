@@ -70,7 +70,7 @@ const Header = () => {
 
   const CustomList = () => {
     return (
-      <Box>
+      <Box style={{ width: 200 }} onClick={handleClose}>
         <List>
           <ListItem>
             <CustomButtons />
