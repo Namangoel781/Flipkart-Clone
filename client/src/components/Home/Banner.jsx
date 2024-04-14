@@ -1,16 +1,16 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import { bannerData } from "../constants/data";
-import { styled } from '@mui/material';
+import { styled } from "@mui/material";
 import "react-multi-carousel/lib/styles.css";
 
-const Image = styled('img')(({ theme }) => ({
-  width: '100%',
+const Image = styled("img")(({ theme }) => ({
+  width: "100%",
   height: 280,
-  [theme.breakpoints.down('sm')]: {
-      objectFit: 'cover',
-      height: 180
-  }
+  [theme.breakpoints.down("sm")]: {
+    objectFit: "cover",
+    height: 180,
+  },
 }));
 
 const responsive = {
@@ -30,7 +30,7 @@ const responsive = {
 
 const Banner = () => {
   return (
-    <Carousel 
+    <Carousel
       responsive={responsive}
       swipeable={false}
       draggable={false}

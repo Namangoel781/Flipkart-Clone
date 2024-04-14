@@ -4,6 +4,7 @@ import { Typography, Grid, Box, styled, Button } from "@mui/material";
 import CartItem from "./CartItem";
 import TotalView from "./TotalView";
 import EmptyCart from "./EmptyCart";
+import Stripecheckout from "./StripeCheckout";
 
 const Container = styled(Grid)(({ theme }) => ({
   padding: "30px 135px",
@@ -46,17 +47,26 @@ const Cart = () => {
 
   return (
     <>
-      {cartItems.length ? (
+      {cartItems?.length ? (
         <Container container>
           <LeftComponent item lg={9} md={12} sm={12} xs={12}>
             <Header>
-              <Typography>My Cart ({cartItems.length})</Typography>
+              <Typography>My Cart ({cartItems?.length})</Typography>
             </Header>
             {cartItems.map((item) => (
               <CartItem item={item} />
             ))}
             <ButtonWrapper>
-              <StyledButton>Place Order</StyledButton>
+              <Stripecheckout
+                name="Your Store Name"
+                description={400}
+                amount={400 * 100}
+                token={100}
+                stripeKey="pk_test_51P53ekSBxNuVy4c2eNt1BgXgrAEPFaVjexPUrDs4iaTvSVoxQ9QlPtS0vpisJufZFLbPkSlanybufwXocQf78uhn00KXouJiqv"
+                currency="INR"
+                billingAddress
+                shippingAddress
+              />
             </ButtonWrapper>
           </LeftComponent>
           <Grid item lg={3} md={3} sm={12} xs={12}>
